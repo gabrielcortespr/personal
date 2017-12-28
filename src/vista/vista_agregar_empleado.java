@@ -47,6 +47,7 @@ public class vista_agregar_empleado extends javax.swing.JFrame {
         btn_agregar = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         tf_email = new javax.swing.JTextField();
+        btn_limpiar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -79,6 +80,8 @@ public class vista_agregar_empleado extends javax.swing.JFrame {
         btn_agregar.setText("Agregar");
 
         jLabel10.setText("Email:");
+
+        btn_limpiar.setText("Limpiar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -132,7 +135,9 @@ public class vista_agregar_empleado extends javax.swing.JFrame {
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(178, 178, 178)
-                        .addComponent(btn_agregar)))
+                        .addComponent(btn_agregar)
+                        .addGap(30, 30, 30)
+                        .addComponent(btn_limpiar)))
                 .addContainerGap(37, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -177,7 +182,9 @@ public class vista_agregar_empleado extends javax.swing.JFrame {
                     .addComponent(jLabel10)
                     .addComponent(tf_email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(47, 47, 47)
-                .addComponent(btn_agregar)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_agregar)
+                    .addComponent(btn_limpiar))
                 .addContainerGap(70, Short.MAX_VALUE))
         );
 
@@ -221,6 +228,7 @@ public class vista_agregar_empleado extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btn_agregar;
+    public javax.swing.JButton btn_limpiar;
     public javax.swing.JComboBox<String> cb_depto;
     public javax.swing.JComboBox<String> cb_est_civil;
     private javax.swing.JLabel jLabel1;

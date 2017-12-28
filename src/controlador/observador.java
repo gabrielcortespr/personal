@@ -37,7 +37,8 @@ public class observador implements ActionListener, MouseListener {
         menu_version,
         btnEliminarEmp,
         btnBuscarEmp,
-        btnModificar
+        btnModificar,
+        btn_limpiar
     }
 
     /**
@@ -82,10 +83,13 @@ public class observador implements ActionListener, MouseListener {
 
         this.vista_agregar.btn_agregar.setActionCommand("btn_agregar");
         this.vista_agregar.btn_agregar.addActionListener(this);
-        
+        //Escucha el boton para limpiar
+        this.vista_agregar.btn_limpiar.setActionCommand("btn_limpiar");
+        this.vista_agregar.btn_limpiar.addActionListener(this);
+
         this.vista_eliminar.btn_elim.setActionCommand("btnEliminarEmp");
         this.vista_eliminar.btn_elim.addActionListener(this);
-        
+
         this.vista_modificar.btn_buscar.setActionCommand("btnBuscarEmp");
         this.vista_modificar.btn_buscar.addActionListener(this);
         this.vista_modificar.btn_modificar.setActionCommand("btnModificar");
@@ -126,6 +130,16 @@ public class observador implements ActionListener, MouseListener {
                 this.vista_acciones.setVisible(true);
                 this.vista_inicio.setVisible(false);
                 break;
+            case btn_limpiar:
+                //Limpiamos textField
+                this.vista_agregar.tf_cod.setText("");
+                this.vista_agregar.tf_nom.setText("");
+                this.vista_agregar.tf_rut.setText("");
+                this.vista_agregar.tf_apellido.setText("");
+                this.vista_agregar.tf_email.setText("");
+                this.vista_agregar.tf_cel.setText("");
+                this.vista_agregar.tf_sueldo.setText("");
+                break;
             case btn_agregar:
                 //Enviamos datos del formulario Ingresar producto a metodo nuevoProducto
                 if (Integer.parseInt(this.vista_agregar.tf_cod.getText()) > 0 && Integer.parseInt(this.vista_agregar.tf_cod.getText()) <= 100) {
@@ -148,14 +162,6 @@ public class observador implements ActionListener, MouseListener {
                                                     this.vista_agregar.cb_depto.getSelectedItem().toString()
                                             )) {
                                                 JOptionPane.showMessageDialog(null, "Empleado agregada correctamente");
-                                                //Limpiamos textField
-                                                this.vista_agregar.tf_cod.setText("");
-                                                this.vista_agregar.tf_nom.setText("");
-                                                this.vista_agregar.tf_rut.setText("");
-                                                this.vista_agregar.tf_apellido.setText("");
-                                                this.vista_agregar.tf_email.setText("");
-                                                this.vista_agregar.tf_cel.setText("");
-                                                this.vista_agregar.tf_sueldo.setText("");
                                             } else {
                                                 JOptionPane.showMessageDialog(null, "No se pudo agregar el empleado");
                                             }
@@ -202,7 +208,7 @@ public class observador implements ActionListener, MouseListener {
                     String sueldo = "";
                     String est_civ = "";
                     String depto = "";
-                    
+
                     rut = this.perso.buscarPorCodigo(code).get(0).getRut();
                     nom = this.perso.buscarPorCodigo(code).get(0).getNombre();
                     ape = this.perso.buscarPorCodigo(code).get(0).getApellido();
@@ -236,8 +242,7 @@ public class observador implements ActionListener, MouseListener {
                         this.vista_modificar.tf_sueldo.getText(),
                         this.vista_modificar.cb_est_civ.getSelectedItem().toString(),
                         this.vista_modificar.cb_depto.getSelectedItem().toString()
-                        )
-                   ) {
+                )) {
                     JOptionPane.showMessageDialog(null, "Empleado actualizado");
                 }
                 break;
