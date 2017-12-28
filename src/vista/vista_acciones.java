@@ -29,7 +29,7 @@ public class vista_acciones extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         btn_listar_redes = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        elim_empleado_sueldo = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
 
@@ -40,7 +40,7 @@ public class vista_acciones extends javax.swing.JFrame {
 
         btn_listar_redes.setText("Listar Empleados \"Redes\"");
 
-        jButton2.setText("Eliminar Empleado Sueldo = 120000");
+        elim_empleado_sueldo.setText("Eliminar Empleado Sueldo = 120000");
 
         jButton3.setText("Modifica Sueldos 10%");
 
@@ -56,7 +56,7 @@ public class vista_acciones extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(btn_listar_redes, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE)
+                        .addComponent(elim_empleado_sueldo, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -80,7 +80,7 @@ public class vista_acciones extends javax.swing.JFrame {
                         .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(btn_listar_redes, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(elim_empleado_sueldo, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addComponent(jButton4)
                 .addContainerGap(26, Short.MAX_VALUE))
@@ -126,7 +126,7 @@ public class vista_acciones extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btn_listar_redes;
-    private javax.swing.JButton jButton2;
+    public javax.swing.JButton elim_empleado_sueldo;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;

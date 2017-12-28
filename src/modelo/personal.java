@@ -266,6 +266,26 @@ public class personal {
         }    
     }
     
+    public static boolean eliminarEmpPorSueldo() {
+        int n = 0;
+        PreparedStatement borrar;
+        try {
+            Connection cnx_elim_sueldo = conexion.getConexion();
+            String query = "DELETE FROM personal WHERE sueldo_bruto='120000'";
+            borrar = cnx_elim_sueldo.prepareStatement(query);
+            n = borrar.executeUpdate();
+            borrar.close();           
+            cnx_elim_sueldo.close();
+            return true;
+        } catch (SQLException s) {
+            System.out.println("Error SQL al eliminar" + s.getMessage());
+            return false;
+        } catch (Exception e) {
+            System.out.println("Error al eliminar" + e.getMessage());
+            return false;
+        }    
+    }
+    
     public ArrayList<personal> buscarPorCodigo(int cod){
         ArrayList<personal> listaPersonal = new ArrayList<personal>();
         try{

@@ -29,7 +29,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="btn_listar_redes" min="-2" pref="204" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jButton2" pref="213" max="32767" attributes="0"/>
+                      <Component id="elim_empleado_sueldo" pref="213" max="32767" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jButton3" min="-2" pref="187" max="-2" attributes="0"/>
                   </Group>
@@ -60,7 +60,7 @@
                   </Group>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="btn_listar_redes" alignment="3" min="-2" pref="63" max="-2" attributes="0"/>
-                      <Component id="jButton2" alignment="3" min="-2" pref="63" max="-2" attributes="0"/>
+                      <Component id="elim_empleado_sueldo" alignment="3" min="-2" pref="63" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -87,10 +87,13 @@
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton2">
+    <Component class="javax.swing.JButton" name="elim_empleado_sueldo">
       <Properties>
         <Property name="text" type="java.lang.String" value="Eliminar Empleado Sueldo = 120000"/>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JButton" name="jButton3">
       <Properties>

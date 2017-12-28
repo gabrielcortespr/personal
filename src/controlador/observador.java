@@ -41,7 +41,8 @@ public class observador implements ActionListener, MouseListener {
         btnBuscarEmp,
         btnModificar,
         btn_limpiar,
-        btnListarRedes
+        btnListarRedes,
+        btnElimEmpSueldo
     }
 
     /**
@@ -98,10 +99,14 @@ public class observador implements ActionListener, MouseListener {
         this.vista_modificar.btn_buscar.addActionListener(this);
         this.vista_modificar.btn_modificar.setActionCommand("btnModificar");
         this.vista_modificar.btn_modificar.addActionListener(this);
-        
+
         //Escucha el boton para Listar empleados Redes
         this.vista_acciones.btn_listar_redes.setActionCommand("btnListarRedes");
         this.vista_acciones.btn_listar_redes.addActionListener(this);
+
+        //Escucha el boton para Eliminar Empleaso por sueldo igual a 120000
+        this.vista_acciones.elim_empleado_sueldo.setActionCommand("btnElimEmpSueldo");
+        this.vista_acciones.elim_empleado_sueldo.addActionListener(this);
     }
 
     @Override
@@ -210,6 +215,13 @@ public class observador implements ActionListener, MouseListener {
                     }
                 } else {
                     JOptionPane.showMessageDialog(null, "El código ingresado no existe!");
+                }
+                break;
+            case btnElimEmpSueldo:
+                if (this.perso.eliminarEmpPorSueldo()) {
+                    JOptionPane.showMessageDialog(null, "Empleado eliminado correctamente");
+                } else {
+                    JOptionPane.showMessageDialog(null, "No se pudo eliminar el empleado");
                 }
                 break;
             case btnBuscarEmp:
