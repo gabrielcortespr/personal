@@ -42,7 +42,8 @@ public class observador implements ActionListener, MouseListener {
         btnModificar,
         btn_limpiar,
         btnListarRedes,
-        btnElimEmpSueldo
+        btnElimEmpSueldo,
+        btnModificaSueldo
     }
 
     /**
@@ -107,6 +108,10 @@ public class observador implements ActionListener, MouseListener {
         //Escucha el boton para Eliminar Empleaso por sueldo igual a 120000
         this.vista_acciones.elim_empleado_sueldo.setActionCommand("btnElimEmpSueldo");
         this.vista_acciones.elim_empleado_sueldo.addActionListener(this);
+        
+        //Escucha el boton para Modificar el sueldo 10%
+        this.vista_acciones.btn_modifica_sueldo.setActionCommand("btnModificaSueldo");
+        this.vista_acciones.btn_modifica_sueldo.addActionListener(this);
     }
 
     @Override
@@ -222,6 +227,13 @@ public class observador implements ActionListener, MouseListener {
                     JOptionPane.showMessageDialog(null, "Empleado eliminado correctamente");
                 } else {
                     JOptionPane.showMessageDialog(null, "No se pudo eliminar el empleado");
+                }
+                break;
+            case btnModificaSueldo:
+                if (this.perso.modificaSueldo()) {
+                    JOptionPane.showMessageDialog(null, "Sueldo modificado");
+                } else {
+                    JOptionPane.showMessageDialog(null, "No se pudo modificar");
                 }
                 break;
             case btnBuscarEmp:

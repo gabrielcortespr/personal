@@ -30,7 +30,7 @@ public class vista_acciones extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         btn_listar_redes = new javax.swing.JButton();
         elim_empleado_sueldo = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btn_modifica_sueldo = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -42,7 +42,7 @@ public class vista_acciones extends javax.swing.JFrame {
 
         elim_empleado_sueldo.setText("Eliminar Empleado Sueldo = 120000");
 
-        jButton3.setText("Modifica Sueldos 10%");
+        btn_modifica_sueldo.setText("Modifica Sueldos 10%");
 
         jButton4.setText("Volver");
 
@@ -58,7 +58,7 @@ public class vista_acciones extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(elim_empleado_sueldo, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btn_modifica_sueldo, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jButton4)))
@@ -77,7 +77,7 @@ public class vista_acciones extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(1, 1, 1)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btn_modifica_sueldo, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(btn_listar_redes, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(elim_empleado_sueldo, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -126,8 +126,8 @@ public class vista_acciones extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btn_listar_redes;
+    public javax.swing.JButton btn_modifica_sueldo;
     public javax.swing.JButton elim_empleado_sueldo;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables

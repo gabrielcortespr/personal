@@ -286,6 +286,25 @@ public class personal {
         }    
     }
     
+    public static boolean modificaSueldo() {
+        PreparedStatement borrar;
+        try {
+            Connection cnx_mod = conexion.getConexion();
+            String query = "UPDATE personal SET sueldo_bruto = (sueldo_bruto*0.1)+sueldo_bruto";
+            borrar = cnx_mod.prepareStatement(query);
+            borrar.executeUpdate();
+            borrar.close();           
+            cnx_mod.close();
+            return true;
+        } catch (SQLException s) {
+            System.out.println("Error SQL al modificar" + s.getMessage());
+            return false;
+        } catch (Exception e) {
+            System.out.println("Error al modificar" + e.getMessage());
+            return false;
+        }    
+    }
+    
     public ArrayList<personal> buscarPorCodigo(int cod){
         ArrayList<personal> listaPersonal = new ArrayList<personal>();
         try{
