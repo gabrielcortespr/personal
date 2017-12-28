@@ -204,6 +204,47 @@ public class personal {
         return tablemodel;
     }
     
+    public DefaultTableModel ListadoEmpRedes(){
+      DefaultTableModel tablemodel = new DefaultTableModel();
+      int registros = 0;
+      String[] columNames = {"Id","Código","Rut","Nombre","Apellido","Celular","Email","Sueldo Bruto","Estado Civil","Departamento"};
+      try{
+         Connection cnx_count = conexion.getConexion();
+         PreparedStatement pstm = cnx_count.prepareStatement( "SELECT count(*) as total FROM personal");
+         ResultSet res = pstm.executeQuery();
+         res.next();
+         registros = res.getInt("total");
+         res.close();
+      }catch(SQLException e){
+         System.err.println( e.getMessage() );
+      }
+      Object[][] data = new String[registros][10];
+      try{
+         Connection cnx_select = conexion.getConexion();
+         PreparedStatement pstm = cnx_select.prepareStatement("SELECT * FROM personal WHERE nom_depto='Redes'");
+         ResultSet res = pstm.executeQuery();
+         int i=0;
+         while(res.next()){
+                data[i][0] = res.getString( "id" );
+                data[i][1] = res.getString( "cod" );
+                data[i][2] = res.getString( "rut" );
+                data[i][3] = res.getString( "nombre" );
+                data[i][4] = res.getString( "apellido" );
+                data[i][5] = res.getString( "celular" );
+                data[i][6] = res.getString( "email" );
+                data[i][7] = res.getString( "sueldo_bruto" );
+                data[i][8] = res.getString( "est_civil" );
+                data[i][9] = res.getString( "nom_depto" );
+            i++;
+         }
+         res.close();
+         tablemodel.setDataVector(data, columNames );
+         }catch(SQLException e){
+            System.err.println( e.getMessage() );
+        }
+        return tablemodel;
+    }
+    
     public static boolean eliminarEmp(int codigo) {
         int n = 0;
         PreparedStatement borrar;

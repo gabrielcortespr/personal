@@ -16,6 +16,7 @@ import vista.vista_listar;
 import vista.vista_eliminar;
 import vista.vista_modificar;
 import vista.vista_acciones;
+import vista.vista_listar_redes;
 
 public class observador implements ActionListener, MouseListener {
 
@@ -25,6 +26,7 @@ public class observador implements ActionListener, MouseListener {
     private vista_eliminar vista_eliminar = new vista_eliminar();
     private vista_modificar vista_modificar = new vista_modificar();
     private vista_acciones vista_acciones = new vista_acciones();
+    private vista_listar_redes vista_listar_redes = new vista_listar_redes();
 
     private personal perso = new personal();
 
@@ -38,7 +40,8 @@ public class observador implements ActionListener, MouseListener {
         btnEliminarEmp,
         btnBuscarEmp,
         btnModificar,
-        btn_limpiar
+        btn_limpiar,
+        btnListarRedes
     }
 
     /**
@@ -60,6 +63,7 @@ public class observador implements ActionListener, MouseListener {
             SwingUtilities.updateComponentTreeUI(this.vista_eliminar);
             SwingUtilities.updateComponentTreeUI(this.vista_modificar);
             SwingUtilities.updateComponentTreeUI(this.vista_acciones);
+            SwingUtilities.updateComponentTreeUI(this.vista_listar_redes);
             this.vista_inicio.setLocationRelativeTo(null);
             this.vista_inicio.setTitle("Base Datos empleados");
             this.vista_inicio.setVisible(true);
@@ -94,6 +98,10 @@ public class observador implements ActionListener, MouseListener {
         this.vista_modificar.btn_buscar.addActionListener(this);
         this.vista_modificar.btn_modificar.setActionCommand("btnModificar");
         this.vista_modificar.btn_modificar.addActionListener(this);
+        
+        //Escucha el boton para Listar empleados Redes
+        this.vista_acciones.btn_listar_redes.setActionCommand("btnListarRedes");
+        this.vista_acciones.btn_listar_redes.addActionListener(this);
     }
 
     @Override
@@ -139,6 +147,13 @@ public class observador implements ActionListener, MouseListener {
                 this.vista_agregar.tf_email.setText("");
                 this.vista_agregar.tf_cel.setText("");
                 this.vista_agregar.tf_sueldo.setText("");
+                break;
+            case btnListarRedes:
+                this.vista_listar_redes.setLocationRelativeTo(null);
+                this.vista_listar_redes.setTitle("Listar Empleado Redes");
+                this.vista_listar_redes.setVisible(true);
+                this.vista_inicio.setVisible(false);
+                this.vista_listar_redes.jt_listar_redes.setModel(this.perso.ListadoEmpRedes());
                 break;
             case btn_agregar:
                 //Enviamos datos del formulario Ingresar producto a metodo nuevoProducto
